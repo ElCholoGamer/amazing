@@ -1,116 +1,72 @@
-.container {
-  padding: 0 2rem;
-}
-
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding: 30px;
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.head {
+	color: var(--primary);
+	font-family: 'Work Sans', sans-serif;
+	font-weight: bold;
+	font-size: 7rem;
+	margin-top: 8rem;
+	margin-bottom: 0.4rem;
+	text-align: center;
+	animation: float 2.5s ease-in-out infinite alternate;
+	text-shadow: 0 0 7px var(--primary);
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.subtitle {
+	margin-top: 0;
+	margin-bottom: 3rem;
+	font-size: 1.5rem;
+	text-align: center;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.mainButtons > * {
+	margin: 0 5px;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.info {
+	max-width: 1000px;
+	margin: 50px 0;
+	padding: 20px;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.info > h3 {
+	font-size: 1.7rem;
+	margin-bottom: 0;
 }
 
-.title,
-.description {
-  text-align: center;
+.anim {
+	filter: drop-shadow(0 0 3px var(--secondary));
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.anim path {
+	stroke: var(--secondary);
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+	animation: dash 3s linear forwards;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+@keyframes float {
+	to {
+		transform: translateY(-10%);
+	}
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+@keyframes dash {
+	to {
+		stroke-dashoffset: 0;
+	}
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+@media only screen and (max-width: 700px) {
+	.head {
+		font-size: 6rem;
+		margin-top: 5rem;
+		margin-bottom: 1rem;
+	}
 }

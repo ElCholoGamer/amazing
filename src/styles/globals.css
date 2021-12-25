@@ -1,16 +1,26 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+:root {
+	--bg: #0a1929;
+	--bg-secondary: #122c47;
+	--primary: white;
+	--secondary: #1976d2;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Montserrat, sans-serif;
+}
+
+body {
+	color: var(--primary);
+	background: var(--bg);
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.text-center {
+	text-align: center;
 }
