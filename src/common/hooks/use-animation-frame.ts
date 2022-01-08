@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-function useAnimationFrame(callback: (deltaTime: number) => void) {
+export function useAnimationFrame(callback: (deltaTime: number) => void) {
 	const handleRef = useRef<number | null>(null);
 	const previousTimeRef = useRef<number | null>(null);
 
@@ -23,5 +23,3 @@ function useAnimationFrame(callback: (deltaTime: number) => void) {
 		};
 	});
 }
-
-export default useAnimationFrame;

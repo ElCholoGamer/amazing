@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import useAnimationFrame from '../common/hooks/use-animation-frame';
+import { useAnimationFrame } from '../common/hooks/use-animation-frame';
 import styles from '../styles/BackgroundMaze.module.css';
 
 const points = [
