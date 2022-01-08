@@ -730,7 +730,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:*":
+"@types/express@npm:*, @types/express@npm:^4.17.13":
   version: 4.17.13
   resolution: "@types/express@npm:4.17.13"
   dependencies:
@@ -3369,6 +3369,7 @@ __metadata:
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
     "@mui/material": ^5.2.5
+    "@types/express": ^4.17.13
     "@types/multer": ^1.4.7
     "@types/node": ^17.0.2
     "@types/react": ^17.0.37
