@@ -1,36 +1,19 @@
 import { NextApiResponse } from 'next';
 import nextConnect from 'next-connect';
 import NextApiFileRequest from '../../common/types/next-api-file-request';
-import multer, { MulterError } from 'multer';
-import { Request, Response } from 'express';
+import multer from 'multer';
+import { uploadHandler } from '../../common/middleware/upload-handler';
+import { bufferToImageData } from '../../common/utils/buffer-to-image-data';
+import { parseCells } from '../../modules/parser/parse-cells';
+import { Region } from 'sharp';
+import { solveMaze } from '../../modules/solver/solver';
 
 const handler = nextConnect();
 
 const upload = multer().single('image');
+handler.use(uploadHandler(upload));
 
-handler.use<Request, Response>((req, res, next) => {
-	upload(req, res, err => {
-		if (!err) return next();
-
-		if (err instanceof MulterError) {
-			if (err.code === 'LIMIT_UNEXPECTED_FILE') {
-				res.status(400).json({
-					statusCode: 400,
-					message: err.message,
-				});
-			} else {
-				res.status(500).json({
-					statusCode: 500,
-					message: err.message,
-				});
-			}
-		} else {
-			console.error(err);
-		}
-	});
-});
-
-handler.post<NextApiFileRequest, NextApiResponse>((req, res) => {
+handler.post<NextApiFileRequest, NextApiResponse>(async (req, res) => {
 	if (!req.file) {
 		return res.status(400).json({
 			statusCode: 400,
@@ -38,8 +21,27 @@ handler.post<NextApiFileRequest, NextApiResponse>((req, res) => {
 		});
 	}
 
-	res.setHeader('Content-Type', 'image/png');
-	res.send(req.file.buffer);
+	const { left, top, width, height, rows, columns, start, end } = req.body;
+
+	const region: Region = {
+		left: Number(left),
+		top: Number(top),
+		width: Number(width),
+		height: Number(height),
+	};
+
+	const startT = Date.now();
+
+	const imageData = await bufferToImageData(req.file.buffer, region);
+	const cells = parseCells(imageData, Number(rows), Number(columns));
+
+	const [startX, startY] = start.split(',').map(Number);
+	const [endX, endY] = end.split(',').map(Number);
+
+	const result = solveMaze(cells, { x: startX, y: startY }, { x: endX, y: endY });
+
+	console.log('Elapsed:', Date.now() - startT);
+	res.json(result);
 });
 
 export const config = {
