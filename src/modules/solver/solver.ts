@@ -1,6 +1,6 @@
 import { PriorityQueue } from '../../common/utils/priority-queue';
-import { Cell } from './types/cell';
-import { Coordinate, CoordinateArray } from './types/coordinate';
+import { Cell } from '../../common/types/cell';
+import { Coordinate, CoordinateArray } from '../../common/types/coordinate';
 import { MazeResult } from './types/maze-result';
 
 export function solveMaze(cells: Cell[][], start: Coordinate, end: Coordinate): MazeResult | null {
