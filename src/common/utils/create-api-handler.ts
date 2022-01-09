@@ -1,28 +1,25 @@
-import { NotFoundError } from 'common/errors/not-found';
-import { NextApiRequest, NextApiResponse } from 'next';
 import nc, { NextConnect, Options } from 'next-connect';
+import { HttpError } from 'common/errors/http';
+import { InternalServerError } from 'common/errors/http/internal-server';
+import { NotFoundError } from 'common/errors/http/not-found';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { handleHttpError } from './handle-http-error';
 
 export function createApiHandler<
 	Req extends NextApiRequest = NextApiRequest,
 	Res extends NextApiResponse = NextApiResponse
 >(options: Options<Req, Res> = {}): NextConnect<Req, Res> {
-	options.onError ||= (err, req: Req, res: Res, next) => {
-		if (err instanceof NotFoundError && options.onNoMatch) {
-			return options.onNoMatch(req, res, next);
+	options.onError ||= (err, req: Req, res: Res) => {
+		if (err instanceof HttpError) {
+			return handleHttpError(err, req, res);
 		}
 
 		console.error(err);
-		res.status(500).json({
-			statusCode: 500,
-			error: 'Internal server error.',
-		});
+		handleHttpError(new InternalServerError(), req, res);
 	};
 
 	options.onNoMatch ||= (req: Req, res: Res) => {
-		res.status(404).json({
-			statusCode: 404,
-			error: 'Page not found.',
-		});
+		handleHttpError(new NotFoundError(), req, res);
 	};
 
 	const handler = nc(options);
