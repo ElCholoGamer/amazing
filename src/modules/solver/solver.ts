@@ -1,6 +1,6 @@
 import { PriorityQueue } from '../../common/utils/priority-queue';
 import { Cell } from '../../common/types/cell';
-import { Coordinate, CoordinateArray } from '../../common/types/coordinate';
+import { Coordinate } from '../../common/types/coordinate';
 import { MazeResult } from './types/maze-result';
 import { traceBack } from './trace-back';
 
