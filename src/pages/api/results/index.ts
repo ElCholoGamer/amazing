@@ -1,4 +1,4 @@
-import NextApiFileRequest from 'common/types/next-api-file-request';
+import { NextApiFileRequest } from 'modules/api/types/next-api-file-request';
 import { UnprocessableEntityError } from 'modules/api/errors/unprocessable-entity';
 import { fileUpload } from 'common/middleware/file-upload';
 import { transformBody } from 'common/middleware/transform-body';
