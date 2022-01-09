@@ -5,12 +5,12 @@ import { MazeResult } from './types/maze-result';
 
 export function solveMaze(cells: Cell[][], start: Coordinate, end: Coordinate): MazeResult | null {
 	// A* search algorithm
+	cells[start.x][start.y].estimatedTotalDistance = 0;
 	cells[start.x][start.y].distance = 0;
-	cells[start.x][start.y].rootDistance = 0;
 
 	for (let x = 0; x < cells.length; x++) {
 		for (let y = 0; y < cells[x].length; y++) {
-			cells[x][y].manhattanD = 2 * Math.abs(end.x - x) + Math.abs(end.y - y);
+			cells[x][y].heuristic = Math.abs(end.x - x) + Math.abs(end.y - y);
 		}
 	}
 
@@ -32,30 +32,26 @@ export function solveMaze(cells: Cell[][], start: Coordinate, end: Coordinate): 
 			}
 
 			return {
-				steps,
 				distance: cell.distance,
+				steps,
 			};
 		}
+
+		const nextDistance = cell.distance + 1;
 
 		for (const neighbor of cell.neighbors) {
 			if (neighbor.visited) continue;
 
-			neighbor.rootDistance = Math.min(neighbor.rootDistance, cell.rootDistance + 1);
-			const minDistance = Math.min(neighbor.distance, neighbor.rootDistance + neighbor.manhattanD);
-
 			const neighborNode = queue.findNode(neighbor);
 
-			if (minDistance !== neighbor.distance) {
-				neighbor.distance = minDistance;
-				neighbor.parent = cell;
-
-				if (neighborNode) {
-					queue.setNodePriority(neighborNode, minDistance);
-				}
+			if (!neighborNode) {
+				queue.enqueue(neighbor, neighbor.estimatedTotalDistance);
 			}
 
-			if (!neighborNode) {
-				queue.enqueue(neighbor, neighbor.distance);
+			if (neighborNode || nextDistance < neighbor.distance) {
+				neighbor.parent = cell;
+				neighbor.distance = nextDistance;
+				neighbor.estimatedTotalDistance = nextDistance + neighbor.heuristic;
 			}
 		}
 	}

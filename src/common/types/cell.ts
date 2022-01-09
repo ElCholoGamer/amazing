@@ -2,9 +2,9 @@ import { Coordinate } from './coordinate';
 
 export interface Cell extends Coordinate {
 	visited: boolean;
+	parent: Cell | null;
 	neighbors: Cell[];
 	distance: number;
-	rootDistance: number;
-	manhattanD: number;
-	parent: Cell | null;
+	estimatedTotalDistance: number;
+	heuristic: number;
 }

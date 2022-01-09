@@ -22,12 +22,12 @@ export function parseCells(imageData: ImageData, rows: number, columns: number):
 		[...Array(rows)].map((_, y) => ({
 			x,
 			y,
-			neighbors: [],
 			visited: false,
-			distance: Infinity,
-			rootDistance: Infinity,
-			manhattanD: 0,
 			parent: null,
+			neighbors: [],
+			distance: Infinity,
+			estimatedTotalDistance: Infinity,
+			heuristic: NaN,
 		}))
 	);
 
