@@ -4,6 +4,8 @@ import { CoordinateSchema, ICoordinate } from './coordinate';
 export interface IResult extends Document {
 	_id: ObjectId;
 	steps: ICoordinate[];
+	toPartial(): any;
+	toJSON(): any;
 	createdAt: Date;
 }
 
@@ -24,3 +26,9 @@ export const ResultSchema = new Schema(
 		},
 	}
 );
+
+ResultSchema.method('toPartial', function (this: IResult) {
+	const json = this.toJSON();
+	delete json.steps;
+	return json;
+});
