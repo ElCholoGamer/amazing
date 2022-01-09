@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
 import placeholderImage from '@public/placeholder.png';
-import InfoCard from 'components/InfoCard';
-import BackgroundMaze from 'components/BackgroundMaze';
+import InfoCard from 'common/components/InfoCard';
+import BackgroundMaze from 'common/components/BackgroundMaze';
 import styles from 'styles/Home.module.css';
 
 const Home: React.FC = () => {
@@ -17,8 +17,10 @@ const Home: React.FC = () => {
 
 				<BackgroundMaze />
 
-				<h1 className={styles.head}>Amazing</h1>
-				<h3 className={styles.subtitle}>The tool for all of your maze-solving needs</h3>
+				<h1 className={styles.head} title="Heh, get it?">
+					Amazing
+				</h1>
+				<h2 className={styles.subtitle}>The tool for all of your maze-solving needs</h2>
 
 				<div className={styles.mainButtons}>
 					<Button variant="contained">Get started!</Button>
@@ -36,17 +38,6 @@ const Home: React.FC = () => {
 					</InfoCard>
 					<InfoCard image={placeholderImage}>Done!</InfoCard>
 				</div>
-
-				{/* <svg className={styles.anim} width={200} height={200} xmlns="http://www.w3.org/2000/svg">
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					fill="none"
-					strokeWidth={5}
-					pathLength={1}
-					d="M 10 10 H 30 V 50 H 130 V 90 H 110 V 70 H 90 V 110 H 180 V 150"
-				/>
-			</svg> */}
 			</main>
 		</>
 	);
