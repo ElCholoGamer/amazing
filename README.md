@@ -1,4 +1,4 @@
-# Maze Solver
+# Amazing
 
 A website for all of your maze-solving needs.
 

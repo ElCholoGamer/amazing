@@ -11,18 +11,18 @@ const Home: React.FC = () => {
 		<>
 			<main className={styles.main}>
 				<Head>
-					<title>Maze Solver</title>
+					<title>Amazing</title>
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 
 				<BackgroundMaze />
 
-				<h1 className={styles.head}>Maze Solver</h1>
+				<h1 className={styles.head}>Amazing</h1>
 				<h3 className={styles.subtitle}>The tool for all of your maze-solving needs</h3>
 
 				<div className={styles.mainButtons}>
 					<Button variant="contained">Get started!</Button>
-					<Link href="https://github.com/ElCholoGamer/maze-solver" passHref>
+					<Link href="https://github.com/ElCholoGamer/amazing" passHref>
 						<Button>View on GitHub</Button>
 					</Link>
 				</div>

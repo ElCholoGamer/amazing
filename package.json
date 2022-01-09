@@ -1,14 +1,14 @@
 {
-	"name": "maze-solver",
+	"name": "amazing",
 	"author": "ElCholoGamer",
 	"version": "0.1.0",
 	"license": "MIT",
 	"private": true,
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ElCholoGamer/maze-solver.git"
+		"url": "https://github.com/ElCholoGamer/amazing.git"
 	},
-	"bugs": "https://github.com/ElCholoGamer/maze-solver/issues",
+	"bugs": "https://github.com/ElCholoGamer/amazing/issues",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
