@@ -6,41 +6,38 @@ import InfoCard from 'common/components/InfoCard';
 import BackgroundMaze from 'common/components/BackgroundMaze';
 import styles from 'styles/Home.module.css';
 
-const Home: React.FC = () => {
-	return (
-		<>
-			<main className={styles.main}>
-				<Head>
-					<title>Amazing</title>
-					<link rel="icon" href="/favicon.ico" />
-				</Head>
+const Home: React.FC = () => (
+	<>
+		<Head>
+			<title>Amazing</title>
+		</Head>
 
-				<BackgroundMaze />
+		<BackgroundMaze />
 
-				<h1 className={styles.head} title="Heh, get it?">
-					Amazing
-				</h1>
-				<h2 className={styles.subtitle}>The tool for all of your maze-solving needs</h2>
+		<main className={styles.main}>
+			<h1 className={styles.head} title="Heh, get it?">
+				Amazing
+			</h1>
+			<h2 className={styles.subtitle}>The tool for all of your maze-solving needs</h2>
 
-				<div className={styles.mainButtons}>
-					<Button variant="contained">Get started!</Button>
-					<Link href="https://github.com/ElCholoGamer/amazing" passHref>
-						<Button>View on GitHub</Button>
-					</Link>
-				</div>
+			<div className={styles.mainButtons}>
+				<Button variant="contained">Get started!</Button>
+				<Link href="https://github.com/ElCholoGamer/amazing" passHref>
+					<Button>View on GitHub</Button>
+				</Link>
+			</div>
 
-				<div className={styles.info}>
-					<h3 style={{ textAlign: 'center' }}>It&apos;s just 3 simple steps:</h3>
+			<div className={styles.info}>
+				<h3 style={{ textAlign: 'center' }}>It&apos;s just 3 simple steps:</h3>
 
-					<InfoCard image={placeholderImage}>Upload your maze image</InfoCard>
-					<InfoCard image={placeholderImage} imageSide="left">
-						Adjust some parameters
-					</InfoCard>
-					<InfoCard image={placeholderImage}>Done!</InfoCard>
-				</div>
-			</main>
-		</>
-	);
-};
+				<InfoCard image={placeholderImage}>Upload your maze image</InfoCard>
+				<InfoCard image={placeholderImage} imageSide="left">
+					Adjust some parameters
+				</InfoCard>
+				<InfoCard image={placeholderImage}>Done!</InfoCard>
+			</div>
+		</main>
+	</>
+);
 
 export default Home;
