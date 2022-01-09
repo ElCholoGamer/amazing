@@ -1,6 +1,6 @@
-import { CoordinateArray } from '@common/types/coordinate';
-import { bufferToImageData } from '@common/utils/buffer-to-image-data';
-import { parseCells } from '../parser/parse-cells';
+import { CoordinateArray } from 'common/types/coordinate';
+import { bufferToImageData } from 'common/utils/buffer-to-image-data';
+import { parseCells } from 'modules/parser/parse-cells';
 import { aStar } from './a-star';
 import { MazeResult } from './types/maze-result';
 import { SolveOptions } from './types/solve-options';

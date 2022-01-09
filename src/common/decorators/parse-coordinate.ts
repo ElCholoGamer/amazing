@@ -1,5 +1,5 @@
 import { Transform } from 'class-transformer';
-import { Coordinate } from '../types/coordinate';
+import { Coordinate } from 'common/types/coordinate';
 
 export function ParseCoordinate() {
 	return Transform(({ value }): Coordinate => {

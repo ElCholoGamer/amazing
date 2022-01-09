@@ -1,4 +1,4 @@
-import { ImageData } from '@common/types/image-data';
+import { ImageData } from 'common/types/image-data';
 
 export function parseWalls(imageData: ImageData, threshold: number): boolean[][] {
 	const { width, height, pixelData } = imageData;

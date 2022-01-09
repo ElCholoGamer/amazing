@@ -4,7 +4,7 @@ import {
 	ValidationArguments,
 	ValidationOptions,
 } from 'class-validator';
-import { Coordinate } from '@common/types/coordinate';
+import { Coordinate } from 'common/types/coordinate';
 
 export function MinCoordinate(minValue: Coordinate, validationOptions?: ValidationOptions) {
 	return function (object: Object, propertyName: string) {
