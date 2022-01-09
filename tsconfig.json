@@ -20,12 +20,9 @@
 		"downlevelIteration": true,
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
-		"baseUrl": ".",
+		"baseUrl": "src",
 		"paths": {
-			"@modules/*": ["src/modules/*"],
-			"@common/*": ["src/common/*"],
-			"@styles/*": ["src/styles/*"],
-			"@public/*": ["public/*"]
+			"@public/*": ["../public/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
