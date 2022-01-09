@@ -8,8 +8,6 @@ import { Coordinate } from '../../../common/types/coordinate';
 
 export function IsEqualOrLessThan(property: string, validationOptions: ValidationOptions = {}) {
 	return function (object: Object, propertyName: string) {
-		validationOptions.message ??= `${propertyName}`;
-
 		registerDecorator({
 			name: 'isEqualOrLessThan',
 			target: object.constructor,
