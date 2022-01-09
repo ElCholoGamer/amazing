@@ -4,7 +4,7 @@ import { Coordinate } from '../../common/types/coordinate';
 import { MazeResult } from './types/maze-result';
 import { traceBack } from './trace-back';
 
-export function solveMaze(cells: Cell[][], start: Coordinate, end: Coordinate): MazeResult | null {
+export function aStar(cells: Cell[][], start: Coordinate, end: Coordinate) {
 	// A* search algorithm
 	cells[start.x][start.y].estimatedTotalDistance = 0;
 	cells[start.x][start.y].distance = 0;
@@ -23,11 +23,7 @@ export function solveMaze(cells: Cell[][], start: Coordinate, end: Coordinate): 
 		cell.visited = true;
 
 		if (cell.x === end.x && cell.y === end.y) {
-			// Reached the end
-			return {
-				distance: cell.distance,
-				steps: traceBack(cell).map(coord => [coord.x, coord.y]),
-			};
+			return;
 		}
 
 		const nextDistance = cell.distance + 1;
@@ -48,6 +44,4 @@ export function solveMaze(cells: Cell[][], start: Coordinate, end: Coordinate): 
 			}
 		}
 	}
-
-	return null;
 }

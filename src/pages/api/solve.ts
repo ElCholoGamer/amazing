@@ -3,12 +3,10 @@ import nextConnect from 'next-connect';
 import multer from 'multer';
 import NextApiFileRequest from '../../common/types/next-api-file-request';
 import { uploadHandler } from '../../common/middleware/upload-handler';
-import { bufferToImageData } from '../../common/utils/buffer-to-image-data';
-import { parseCells } from '../../modules/parser/parse-cells';
-import { solveMaze } from '../../modules/solver/solver';
 import { validateImage } from '../../modules/validator/validate-image';
 import { transformBody } from '../../common/middleware/transform-body';
 import { SolveOptions } from '../../modules/solver/types/solve-options';
+import { solveMaze } from '../../modules/solver/solve';
 
 const handler = nextConnect();
 
@@ -18,12 +16,7 @@ handler.use(validateImage({ maxSize: 10e6 }));
 handler.use(transformBody(SolveOptions));
 
 handler.post<NextApiFileRequest, NextApiResponse>(async (req, res) => {
-	const { left, top, width, height, rows, columns, start, end } = req.body as SolveOptions;
-
-	const imageData = await bufferToImageData(req.file.buffer, { left, top, width, height });
-	const cells = parseCells(imageData, Number(rows), Number(columns));
-
-	const result = solveMaze(cells, start, end);
+	const result = await solveMaze(req.file.buffer, req.body);
 
 	if (result === null) {
 		return res.status(422).json({
