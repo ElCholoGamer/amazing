@@ -12,7 +12,7 @@ const handler = nextConnect();
 handler.use(fileUpload('image'));
 handler.use(
 	validateFile({
-		maxSize: 10e6,
+		maxSize: 10e6, // 10 MB
 		mimeTypes: ['png', 'jpeg', 'jpg', 'webp'].map(ext => `image/${ext}`),
 	})
 );

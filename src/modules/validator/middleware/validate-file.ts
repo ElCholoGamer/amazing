@@ -9,9 +9,8 @@ export interface Options {
 export const validateFile =
 	(options: Options = {}): RequestHandler =>
 	(req, res, next) => {
-		const { fieldname, mimetype, size } = req.file!;
-
 		const { maxSize = -1, mimeTypes } = options;
+		const { fieldname, mimetype, size } = req.file!;
 
 		if (mimeTypes && !mimeTypes.includes(mimetype)) {
 			return res.status(415).json({
