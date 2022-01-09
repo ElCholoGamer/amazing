@@ -1,13 +1,18 @@
 import { ClassConstructor, plainToClass } from 'class-transformer';
-import { validateOrReject, ValidationError } from 'class-validator';
+import { validateOrReject, ValidationError, ValidatorOptions } from 'class-validator';
 import { RequestHandler } from 'express';
 
-export const transformBody =
-	(cls: ClassConstructor<any>): RequestHandler =>
-	async (req, res, next) => {
+export const transformBody = (
+	cls: ClassConstructor<any>,
+	validatorOptions: ValidatorOptions = {}
+): RequestHandler => {
+	validatorOptions.forbidUnknownValues ??= true;
+	validatorOptions.stopAtFirstError ??= true;
+
+	return async (req, res, next) => {
 		try {
 			const classObj = plainToClass(cls, req.body);
-			await validateOrReject(classObj, { forbidUnknownValues: true, stopAtFirstError: true });
+			await validateOrReject(classObj, validatorOptions);
 
 			req.body = classObj;
 			next();
@@ -22,3 +27,4 @@ export const transformBody =
 			});
 		}
 	};
+};
