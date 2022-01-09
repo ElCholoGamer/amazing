@@ -1,17 +1,13 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
 import placeholderImage from '@public/placeholder.png';
+import Layout from 'modules/layout/components/Layout';
 import InfoCard from 'common/components/InfoCard';
 import BackgroundMaze from 'common/components/BackgroundMaze';
 import styles from 'styles/Home.module.css';
 
 const Home: React.FC = () => (
-	<>
-		<Head>
-			<title>Amazing</title>
-		</Head>
-
+	<Layout>
 		<BackgroundMaze />
 
 		<main className={styles.main}>
@@ -37,7 +33,7 @@ const Home: React.FC = () => (
 				<InfoCard image={placeholderImage}>Done!</InfoCard>
 			</div>
 		</main>
-	</>
+	</Layout>
 );
 
 export default Home;
