@@ -16,10 +16,10 @@ export const transformBody = (
 
 			req.body = classObj;
 			next();
-		} catch (errors: any) {
-			const messages = errors.map((error: ValidationError) =>
-				Object.values(error.constraints || {})
-			);
+		} catch (err: any) {
+			if (!Array.isArray(err)) throw err;
+
+			const messages = err.map((error: ValidationError) => Object.values(error.constraints || {}));
 
 			res.status(400).json({
 				statusCode: 400,
