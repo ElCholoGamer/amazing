@@ -2,6 +2,7 @@ import { PriorityQueue } from '../../common/utils/priority-queue';
 import { Cell } from '../../common/types/cell';
 import { Coordinate, CoordinateArray } from '../../common/types/coordinate';
 import { MazeResult } from './types/maze-result';
+import { traceBack } from './trace-back';
 
 export function solveMaze(cells: Cell[][], start: Coordinate, end: Coordinate): MazeResult | null {
 	// A* search algorithm
@@ -23,17 +24,9 @@ export function solveMaze(cells: Cell[][], start: Coordinate, end: Coordinate): 
 
 		if (cell.x === end.x && cell.y === end.y) {
 			// Reached the end
-			const steps: CoordinateArray[] = [];
-
-			let current = cell;
-			while (current.parent) {
-				steps.unshift([current.x, current.y]);
-				current = current.parent;
-			}
-
 			return {
 				distance: cell.distance,
-				steps,
+				steps: traceBack(cell).map(coord => [coord.x, coord.y]),
 			};
 		}
 
