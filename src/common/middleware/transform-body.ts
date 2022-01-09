@@ -1,5 +1,6 @@
 import { ClassConstructor, plainToClass } from 'class-transformer';
 import { validateOrReject, ValidationError, ValidatorOptions } from 'class-validator';
+import { HttpError } from 'common/errors/http';
 import { RequestHandler } from 'express';
 
 export const transformBody = (
@@ -21,10 +22,12 @@ export const transformBody = (
 
 			const messages = err.map((error: ValidationError) => Object.values(error.constraints || {}));
 
-			res.status(400).json({
-				statusCode: 400,
-				errors: messages.flat(),
-			});
+			next(
+				new HttpError(400, 'Validation error', {
+					statusCode: 400,
+					errors: messages.flat(),
+				})
+			);
 		}
 	};
 };

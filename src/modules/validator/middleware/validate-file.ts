@@ -1,3 +1,5 @@
+import { PayloadTooLargeError } from 'common/errors/http/payload-too-large';
+import { UnsupportedMediaTypeError } from 'common/errors/http/unsupported-media-type';
 import { RequestHandler } from 'express';
 import prettyBytes from 'pretty-bytes';
 
@@ -13,17 +15,15 @@ export const validateFile =
 		const { fieldname, mimetype, size } = req.file!;
 
 		if (mimeTypes && !mimeTypes.includes(mimetype)) {
-			return res.status(415).json({
-				status: 415,
-				error: `MIME type for ${fieldname} must be one of: ${mimeTypes.join(', ')}.`,
-			});
+			throw new UnsupportedMediaTypeError(
+				`MIME type for ${fieldname} must be one of: ${mimeTypes.join(', ')}.`
+			);
 		}
 
 		if (maxSize > 0 && size > maxSize) {
-			return res.status(413).json({
-				status: 413,
-				error: `File size for ${fieldname} must be equal or less than ${prettyBytes(maxSize)}.`,
-			});
+			throw new PayloadTooLargeError(
+				`File size for ${fieldname} must be equal or less than ${prettyBytes(maxSize)}.`
+			);
 		}
 
 		next();

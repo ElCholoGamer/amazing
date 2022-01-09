@@ -1,4 +1,4 @@
-import { NotFoundError } from 'common/errors/not-found';
+import { NotFoundError } from 'common/errors/http/not-found';
 import { createApiHandler } from 'common/utils/create-api-handler';
 import { Result } from 'modules/database/models/result';
 import { db } from 'modules/database/db';
