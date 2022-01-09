@@ -1,18 +1,21 @@
 import { NextApiResponse } from 'next';
 import nextConnect from 'next-connect';
-import multer from 'multer';
 import NextApiFileRequest from '../../common/types/next-api-file-request';
-import { uploadHandler } from '../../common/middleware/upload-handler';
-import { validateImage } from '../../modules/validator/validate-image';
+import { fileUpload } from '../../common/middleware/file-upload';
 import { transformBody } from '../../common/middleware/transform-body';
 import { SolveOptions } from '../../modules/solver/types/solve-options';
 import { solveMaze } from '../../modules/solver/solve';
+import { validateFile } from '../../modules/validator/middleware/validate-file';
 
 const handler = nextConnect();
 
-const upload = multer().single('image');
-handler.use(uploadHandler(upload));
-handler.use(validateImage({ maxSize: 10e6 }));
+handler.use(fileUpload('image'));
+handler.use(
+	validateFile({
+		maxSize: 10e6,
+		mimeTypes: ['png', 'jpeg', 'jpg', 'webp'].map(ext => `image/${ext}`),
+	})
+);
 handler.use(transformBody(SolveOptions));
 
 handler.post<NextApiFileRequest, NextApiResponse>(async (req, res) => {
