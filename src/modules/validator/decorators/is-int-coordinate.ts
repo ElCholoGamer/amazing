@@ -10,10 +10,11 @@ export function IsIntCoordinate(validationOptions?: ValidationOptions) {
 			validator: {
 				validate(value: any) {
 					return (
+						typeof value === 'object' &&
 						typeof value.x === 'number' &&
 						typeof value.y === 'number' &&
-						!isNaN(value.x) &&
-						!isNaN(value.y)
+						Number.isInteger(value.x) &&
+						Number.isInteger(value.y)
 					);
 				},
 				defaultMessage: buildMessage(
