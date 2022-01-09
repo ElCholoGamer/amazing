@@ -4,11 +4,8 @@ import { Coordinate } from '../../../common/types/coordinate';
 import { ParseCoordinate } from '../../../common/decorators/parse-coordinate';
 import { IsIntCoordinate } from '../../validator/decorators/is-int-coordinate';
 import { MinCoordinate } from '../../validator/decorators/min-coordinates';
-import {
-	IsEqualOrLessThan,
-	IsXEqualOrLessThan,
-	IsYEqualOrLessThan,
-} from '../../validator/decorators/is-equal-or-less-than';
+import { IsEqualOrLessThan } from '../../validator/decorators/is-equal-or-less-than';
+import { IsXLessThan, IsYLessThan } from '../../validator/decorators/is-less-than';
 
 export class SolveOptions {
 	@ParseNumber()
@@ -44,15 +41,15 @@ export class SolveOptions {
 	columns!: number;
 
 	@ParseCoordinate()
-	@IsXEqualOrLessThan('columns')
-	@IsYEqualOrLessThan('rows')
+	@IsXLessThan('columns')
+	@IsYLessThan('rows')
 	@MinCoordinate({ x: 0, y: 0 })
 	@IsIntCoordinate()
 	start!: Coordinate;
 
 	@ParseCoordinate()
-	@IsXEqualOrLessThan('columns')
-	@IsYEqualOrLessThan('rows')
+	@IsXLessThan('columns')
+	@IsYLessThan('rows')
 	@MinCoordinate({ x: 0, y: 0 })
 	@IsIntCoordinate()
 	end!: Coordinate;
