@@ -1,6 +1,6 @@
 import { ClassConstructor, plainToClass } from 'class-transformer';
 import { validateOrReject, ValidationError, ValidatorOptions } from 'class-validator';
-import { HttpError } from 'common/errors/http';
+import { HttpError } from 'modules/api/errors/http-error';
 import { RequestHandler } from 'express';
 
 export const transformBody = (

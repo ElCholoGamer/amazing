@@ -1,5 +1,5 @@
-import { PayloadTooLargeError } from 'common/errors/http/payload-too-large';
-import { UnsupportedMediaTypeError } from 'common/errors/http/unsupported-media-type';
+import { PayloadTooLargeError } from 'modules/api/errors/payload-too-large';
+import { UnsupportedMediaTypeError } from 'modules/api/errors/unsupported-media-type';
 import { RequestHandler } from 'express';
 import prettyBytes from 'pretty-bytes';
 

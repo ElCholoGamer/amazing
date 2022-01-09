@@ -1,7 +1,7 @@
 import nc, { NextConnect, Options } from 'next-connect';
-import { HttpError } from 'common/errors/http';
-import { InternalServerError } from 'common/errors/http/internal-server';
-import { NotFoundError } from 'common/errors/http/not-found';
+import { HttpError } from 'modules/api/errors/http-error';
+import { InternalServerError } from 'modules/api/errors/internal-server';
+import { NotFoundError } from 'modules/api/errors/not-found';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { handleHttpError } from './handle-http-error';
 

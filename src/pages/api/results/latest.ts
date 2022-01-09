@@ -1,4 +1,4 @@
-import { createApiHandler } from 'common/utils/create-api-handler';
+import { createApiHandler } from 'modules/api/create-api-handler';
 import { db } from 'modules/database/db';
 import { getLatestResults } from 'modules/database/results';
 

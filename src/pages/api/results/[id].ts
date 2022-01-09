@@ -1,5 +1,5 @@
-import { NotFoundError } from 'common/errors/http/not-found';
-import { createApiHandler } from 'common/utils/create-api-handler';
+import { NotFoundError } from 'modules/api/errors/not-found';
+import { createApiHandler } from 'modules/api/create-api-handler';
 import { Result } from 'modules/database/models/result';
 import { db } from 'modules/database/db';
 import { validateObjectId } from 'modules/validator/middleware/validate-object-id';

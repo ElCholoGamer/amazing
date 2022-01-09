@@ -1,8 +1,8 @@
 import NextApiFileRequest from 'common/types/next-api-file-request';
-import { UnprocessableEntityError } from 'common/errors/http/unprocessable-entity';
+import { UnprocessableEntityError } from 'modules/api/errors/unprocessable-entity';
 import { fileUpload } from 'common/middleware/file-upload';
 import { transformBody } from 'common/middleware/transform-body';
-import { createApiHandler } from 'common/utils/create-api-handler';
+import { createApiHandler } from 'modules/api/create-api-handler';
 import { createResult } from 'modules/database/create-result';
 import { db } from 'modules/database/db';
 import { getAllResults } from 'modules/database/results';
