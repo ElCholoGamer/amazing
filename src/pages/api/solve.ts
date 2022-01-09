@@ -7,7 +7,7 @@ import { bufferToImageData } from '../../common/utils/buffer-to-image-data';
 import { parseCells } from '../../modules/parser/parse-cells';
 import { Region } from 'sharp';
 import { solveMaze } from '../../modules/solver/solver';
-import { validateImage } from '../../common/middleware/validate-image';
+import { validateImage } from '../../modules/validator/validate-image';
 
 const handler = nextConnect();
 
