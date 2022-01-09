@@ -1,5 +1,5 @@
-import { ImageData } from '../../common/types/image-data';
-import { Cell } from '../../common/types/cell';
+import { ImageData } from '@common/types/image-data';
+import { Cell } from '@common/types/cell';
 import { parseWalls } from './parse-walls';
 
 export function parseCells(imageData: ImageData, rows: number, columns: number): Cell[][] {

@@ -1,4 +1,4 @@
-import { CoordinateArray } from '../../../common/types/coordinate';
+import { CoordinateArray } from '@common/types/coordinate';
 
 export interface MazeResult {
 	distance: number;

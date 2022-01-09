@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
-import styles from '../styles/Home.module.css';
 import InfoCard from '../components/InfoCard';
-import placeholderImage from '../../public/placeholder.png';
+import placeholderImage from '@public/placeholder.png';
 import BackgroundMaze from '../components/BackgroundMaze';
+import styles from '@styles/Home.module.css';
 
 const Home: React.FC = () => {
 	return (

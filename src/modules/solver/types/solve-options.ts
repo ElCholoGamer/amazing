@@ -1,11 +1,11 @@
 import { IsInt, Min } from 'class-validator';
-import { ParseNumber } from '../../../common/decorators/parse-number';
-import { Coordinate } from '../../../common/types/coordinate';
-import { ParseCoordinate } from '../../../common/decorators/parse-coordinate';
-import { IsIntCoordinate } from '../../validator/decorators/is-int-coordinate';
-import { MinCoordinate } from '../../validator/decorators/min-coordinates';
-import { IsEqualOrLessThan } from '../../validator/decorators/is-equal-or-less-than';
-import { IsXLessThan, IsYLessThan } from '../../validator/decorators/is-less-than';
+import { ParseNumber } from '@common/decorators/parse-number';
+import { Coordinate } from '@common/types/coordinate';
+import { ParseCoordinate } from '@common/decorators/parse-coordinate';
+import { IsIntCoordinate } from '@modules/validator/decorators/is-int-coordinate';
+import { MinCoordinate } from '@modules/validator/decorators/min-coordinates';
+import { IsEqualOrLessThan } from '@modules/validator/decorators/is-equal-or-less-than';
+import { IsXLessThan, IsYLessThan } from '@modules/validator/decorators/is-less-than';
 
 export class SolveOptions {
 	@ParseNumber()

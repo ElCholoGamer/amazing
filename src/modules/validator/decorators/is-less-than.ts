@@ -4,7 +4,7 @@ import {
 	ValidationArguments,
 	buildMessage,
 } from 'class-validator';
-import { Coordinate } from '../../../common/types/coordinate';
+import { Coordinate } from '@common/types/coordinate';
 
 export function IsLessThan(property: string, validationOptions: ValidationOptions = {}) {
 	return function (object: Object, propertyName: string) {
