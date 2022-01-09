@@ -38,6 +38,13 @@ handler.post<NextApiFileRequest, NextApiResponse>(async (req, res) => {
 
 	const result = solveMaze(cells, { x: startX, y: startY }, { x: endX, y: endY });
 
+	if (result === null) {
+		return res.status(422).json({
+			statusCode: 422,
+			message: 'Unable to solve maze',
+		});
+	}
+
 	res.json(result);
 });
 
