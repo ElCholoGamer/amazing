@@ -5,6 +5,8 @@ import { transformBody } from 'common/middleware/transform-body';
 import { SolveOptions } from 'modules/solver/types/solve-options';
 import { solveMaze } from 'modules/solver/solve';
 import { validateFile } from 'modules/validator/middleware/validate-file';
+import { db } from 'modules/database/db';
+import { createResult } from 'modules/database/create-result';
 
 const handler = createApiHandler<NextApiFileRequest>();
 
@@ -16,17 +18,19 @@ handler.use(
 	})
 );
 handler.use(transformBody(SolveOptions));
+handler.use(db());
 
 handler.post(async (req, res) => {
-	const result = await solveMaze(req.file.buffer, req.body);
+	const steps = await solveMaze(req.file.buffer, req.body);
 
-	if (result === null) {
+	if (steps === null) {
 		return res.status(422).json({
 			statusCode: 422,
 			message: 'Unable to solve maze',
 		});
 	}
 
+	const result = await createResult(steps);
 	res.json(result);
 });
 
