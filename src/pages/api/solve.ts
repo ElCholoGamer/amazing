@@ -30,8 +30,6 @@ handler.post<NextApiFileRequest, NextApiResponse>(async (req, res) => {
 		height: Number(height),
 	};
 
-	const startT = Date.now();
-
 	const imageData = await bufferToImageData(req.file.buffer, region);
 	const cells = parseCells(imageData, Number(rows), Number(columns));
 
@@ -40,7 +38,6 @@ handler.post<NextApiFileRequest, NextApiResponse>(async (req, res) => {
 
 	const result = solveMaze(cells, { x: startX, y: startY }, { x: endX, y: endY });
 
-	console.log('Elapsed:', Date.now() - startT);
 	res.json(result);
 });
 
