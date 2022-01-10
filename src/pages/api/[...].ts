@@ -4,7 +4,7 @@ import { NotFoundError } from 'modules/api/errors/not-found';
 const handler = createApiHandler();
 
 handler.all(() => {
-	throw new NotFoundError('Not found.');
+	throw new NotFoundError();
 });
 
 export default handler;
