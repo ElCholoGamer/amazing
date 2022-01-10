@@ -1,7 +1,7 @@
 import { NotFoundError } from 'modules/api/errors/not-found';
 import { createApiHandler } from 'modules/api/create-api-handler';
 import { Result } from 'modules/database/models/result';
-import { db } from 'modules/database/db';
+import { db } from 'modules/database/middleware/db';
 import { validateObjectId } from 'modules/validator/middleware/validate-object-id';
 
 const handler = createApiHandler();

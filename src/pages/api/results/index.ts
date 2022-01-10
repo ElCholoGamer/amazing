@@ -4,7 +4,7 @@ import { fileUpload } from 'common/middleware/file-upload';
 import { transformBody } from 'common/middleware/transform-body';
 import { createApiHandler } from 'modules/api/create-api-handler';
 import { createResult } from 'modules/database/create-result';
-import { db } from 'modules/database/db';
+import { db } from 'modules/database/middleware/db';
 import { getAllResults } from 'modules/database/results';
 import { solveMaze } from 'modules/solver/solve';
 import { SolveOptions } from 'modules/solver/types/solve-options';
