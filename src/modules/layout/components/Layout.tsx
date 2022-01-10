@@ -18,12 +18,12 @@ export const Layout: React.FC<Props> = ({
 
 	og ||= {
 		title: fullTitle,
+		type: 'website',
+		image: {
+			url: `${process.env.NEXT_PUBLIC_HOST_URL}/og_image.png`,
+			alt: 'A photo of Edsger Wybe Dijkstra',
+		},
 		description,
-	};
-
-	og.image ||= {
-		url: `${process.env.NEXT_PUBLIC_HOST_URL}/og_image.png`,
-		alt: 'A photo of Edsger Wybe Dijkstra',
 	};
 
 	return (
