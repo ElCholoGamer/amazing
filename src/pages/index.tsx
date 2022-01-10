@@ -16,12 +16,7 @@ const Home: React.FC = () => (
 				<span className="important">maze-solving</span> needs
 			</h2>
 
-			<div className={styles.mainButtons}>
-				<Button variant="contained">Get started!</Button>
-				<Link href="https://github.com/ElCholoGamer/amazing" passHref>
-					<Button>View on GitHub</Button>
-				</Link>
-			</div>
+			<Button variant="contained">Get started!</Button>
 
 			<div className={styles.info}>
 				<h3 style={{ textAlign: 'center' }}>It&apos;s just 3 simple steps:</h3>
