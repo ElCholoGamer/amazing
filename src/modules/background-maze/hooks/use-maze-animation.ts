@@ -2,7 +2,7 @@ import { useAnimationFrame } from 'common/hooks/use-animation-frame';
 import { Coordinate } from 'common/types/coordinate';
 import { randomRange } from 'common/utils/random-range';
 import { RefObject, useRef } from 'react';
-import { moves } from '../constants';
+import { colors, moves } from '../constants';
 import { Spark } from '../types/spark';
 
 function tickSpark(spark: Spark, delta: number) {
@@ -16,11 +16,7 @@ export function useMazeAnimation(canvasRef: RefObject<HTMLCanvasElement>) {
 	const progress = useRef(0);
 	const sparks = useRef<Spark[]>([]);
 
-	function drawPath(ctx: CanvasRenderingContext2D, sizeRatio: number): Coordinate {
-		ctx.lineWidth = 5 * sizeRatio;
-		ctx.shadowBlur = 5 * sizeRatio;
-		ctx.shadowColor = ctx.strokeStyle = '#0e2238';
-		ctx.lineCap = ctx.lineJoin = 'round';
+	function drawPath(ctx: CanvasRenderingContext2D): Coordinate {
 		ctx.beginPath();
 
 		const pos = { ...moves[0] };
@@ -63,7 +59,11 @@ export function useMazeAnimation(canvasRef: RefObject<HTMLCanvasElement>) {
 
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		const cursor = drawPath(ctx, sizeRatio);
+		ctx.lineWidth = 5 * sizeRatio;
+		ctx.shadowBlur = 5 * sizeRatio;
+		ctx.shadowColor = ctx.strokeStyle = colors.path;
+		ctx.lineCap = ctx.lineJoin = 'round';
+		const cursor = drawPath(ctx);
 
 		if (progress.current < 1) {
 			const velRange = 120 * sizeRatio;
@@ -75,7 +75,7 @@ export function useMazeAnimation(canvasRef: RefObject<HTMLCanvasElement>) {
 		}
 
 		// Draw sparks
-		ctx.fillStyle = ctx.shadowColor = '#fbfd75';
+		ctx.fillStyle = ctx.shadowColor = colors.spark;
 		for (const { position, size } of sparks.current) {
 			ctx.shadowBlur = 6 * sizeRatio * size;
 			ctx.beginPath();
@@ -85,7 +85,9 @@ export function useMazeAnimation(canvasRef: RefObject<HTMLCanvasElement>) {
 
 		// Draw cursor
 		if (progress.current < 1) {
+			ctx.fillStyle = ctx.shadowColor = colors.cursor;
 			ctx.shadowBlur = 15 * sizeRatio;
+
 			ctx.beginPath();
 			ctx.arc(cursor.x, cursor.y, 6 * sizeRatio, 0, Math.PI * 2);
 			ctx.fill();

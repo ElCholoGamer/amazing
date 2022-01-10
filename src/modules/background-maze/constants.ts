@@ -2,6 +2,12 @@ import { Coordinate } from 'common/types/coordinate';
 
 export const CELL_SIZE = 50;
 
+export const colors = {
+	path: '#0e2238',
+	cursor: '#fbfd75',
+	spark: '#fbfd75',
+};
+
 export const moves: Coordinate[] = [
 	[-1, 1],
 	[1, 0],
