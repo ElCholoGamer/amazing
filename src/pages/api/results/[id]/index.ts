@@ -16,8 +16,7 @@ handler.use(
 handler.use(db());
 
 handler.get(async (req, res) => {
-	const { query } = req;
-	const id = Array.isArray(query.id) ? query.id.join(',') : query.id;
+	const id = req.queryString('id');
 
 	const result = await Result.findById(id);
 	if (!result) throw new NotFoundError('Result not found.');
