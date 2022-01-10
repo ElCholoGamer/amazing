@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.2"],
             ["@types/react", "npm:17.0.37"],
             ["@types/sharp", "npm:0.29.5"],
+            ["bootstrap", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.1.3"],
             ["class-transformer", "npm:0.5.1"],
             ["class-validator", "npm:0.13.2"],
             ["cloudinary", "npm:1.28.1"],
@@ -1736,6 +1737,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.2"],
             ["@types/react", "npm:17.0.37"],
             ["@types/sharp", "npm:0.29.5"],
+            ["bootstrap", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.1.3"],
             ["class-transformer", "npm:0.5.1"],
             ["class-validator", "npm:0.13.2"],
             ["cloudinary", "npm:1.28.1"],
@@ -2090,6 +2092,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/bn.js-npm-5.2.0-11748c0b07-6117170393.zip/node_modules/bn.js/",
           "packageDependencies": [
             ["bn.js", "npm:5.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["bootstrap", [
+        ["npm:5.1.3", {
+          "packageLocation": "./.yarn/cache/bootstrap-npm-5.1.3-691fdc19a6-301b5ed872.zip/node_modules/bootstrap/",
+          "packageDependencies": [
+            ["bootstrap", "npm:5.1.3"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.1.3", {
+          "packageLocation": "./.yarn/__virtual__/bootstrap-virtual-0d7cfc7f4e/0/cache/bootstrap-npm-5.1.3-691fdc19a6-301b5ed872.zip/node_modules/bootstrap/",
+          "packageDependencies": [
+            ["bootstrap", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.1.3"],
+            ["@popperjs/core", null],
+            ["@types/popperjs__core", null]
+          ],
+          "packagePeers": [
+            "@popperjs/core",
+            "@types/popperjs__core"
           ],
           "linkType": "HARD",
         }]
