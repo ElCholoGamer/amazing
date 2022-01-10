@@ -1,9 +1,9 @@
 :root {
-	--bg: #0a1929;
-	--bg-secondary: #122c47;
+	--bg: rgb(10, 25, 41);
+	--bg-secondary: rgb(18, 44, 71);
 	--primary: white;
-	--secondary: #1976d2;
-	--important: #fbfd75;
+	--secondary: rgb(25, 118, 210);
+	--important: rgb(251, 253, 117);
 }
 
 * {
