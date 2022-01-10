@@ -1,11 +1,12 @@
 import { Coordinate } from 'common/types/coordinate';
+import variables from 'styles/variables.module.scss';
 
 export const CELL_SIZE = 50;
 
 export const colors = {
 	path: '#0e2238',
-	cursor: '#fbfd75',
-	spark: '#fbfd75',
+	cursor: variables.importantColor,
+	spark: variables.importantColor,
 };
 
 export const moves: Coordinate[] = [
