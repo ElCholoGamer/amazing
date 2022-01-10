@@ -35,8 +35,10 @@ export const Layout: React.FC<Props> = ({
 			</Head>
 			<OpenGraph {...og} />
 
-			<Header />
-			{children}
+			<div>
+				<Header />
+				{children}
+			</div>
 			<Footer />
 		</>
 	);
