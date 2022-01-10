@@ -1,6 +1,6 @@
 import { UploadApiOptions, UploadApiResponse, v2 as cloudinary } from 'cloudinary';
 import { Readable } from 'stream';
-import { THUMBNAIL_SIZE } from './constants';
+import { StorageFolder, THUMBNAIL_SIZE } from './constants';
 
 export const uploadImage = (image: Buffer, options?: UploadApiOptions) =>
 	new Promise<UploadApiResponse>((resolve, reject) => {
@@ -20,7 +20,7 @@ export const uploadImage = (image: Buffer, options?: UploadApiOptions) =>
 
 export const uploadThumbnail = (image: Buffer, options?: UploadApiOptions) =>
 	uploadImage(image, {
-		folder: 'thumbnails',
+		folder: StorageFolder.THUMBNAILS,
 		transformation: {
 			width: THUMBNAIL_SIZE.width,
 			height: THUMBNAIL_SIZE.height,
