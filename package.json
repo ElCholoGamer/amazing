@@ -1,5 +1,6 @@
 {
 	"name": "amazing",
+	"description": "The tool for all of your maze-solving needs",
 	"author": "ElCholoGamer",
 	"version": "0.1.0",
 	"license": "MIT",
