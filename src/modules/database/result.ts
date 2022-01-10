@@ -1,11 +1,8 @@
-import { QueryOptions } from 'mongoose';
 import { Coordinate } from 'common/types/coordinate';
 import { StorageFolder } from './constants';
 import { uploadImage, uploadThumbnail } from './image';
 import { Result } from './models/result';
 import { IResult } from './schemas/result';
-
-export const getAllResults = (options?: QueryOptions) => Result.find({}, {}, options);
 
 export const getLatestResults = (limit = 10) => Result.find({}, {}, { limit });
 
