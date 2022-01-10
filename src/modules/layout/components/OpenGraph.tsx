@@ -10,7 +10,7 @@ export interface Props {
 	};
 }
 
-const OpenGraph: React.FC<Props> = ({ title, description, type = 'website', image }) => (
+export const OpenGraph: React.FC<Props> = ({ title, description, type = 'website', image }) => (
 	<Head>
 		<meta property="og:type" content={type} />
 		{title && <meta property="og:title" content={title} />}
@@ -23,5 +23,3 @@ const OpenGraph: React.FC<Props> = ({ title, description, type = 'website', imag
 		)}
 	</Head>
 );
-
-export default OpenGraph;

@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Footer from 'modules/layout/components/Footer';
-import OpenGraph, { Props as OpenGraphProps } from './OpenGraph';
+import { Footer } from 'modules/layout/components/Footer';
+import { OpenGraph, Props as OpenGraphProps } from './OpenGraph';
 
 export interface Props {
 	title?: string;
@@ -8,7 +8,7 @@ export interface Props {
 	og?: OpenGraphProps;
 }
 
-const Layout: React.FC<Props> = ({
+export const Layout: React.FC<Props> = ({
 	title,
 	description = 'The tool for all of your maze solving needs',
 	og,
@@ -39,5 +39,3 @@ const Layout: React.FC<Props> = ({
 		</>
 	);
 };
-
-export default Layout;

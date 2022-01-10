@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Button from '@mui/material/Button';
-import Layout from 'modules/layout/components/Layout';
+import { Layout } from 'modules/layout/components/Layout';
 
 const NotFound: React.FC = () => {
 	const router = useRouter();

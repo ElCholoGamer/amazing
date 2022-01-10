@@ -7,7 +7,7 @@ interface Props extends ComponentProps<'div'> {
 	imageSide?: 'right' | 'left';
 }
 
-const InfoCard: React.FC<Props> = ({ image, imageSide, children, ...props }) => (
+export const InfoCard: React.FC<Props> = ({ image, imageSide, children, ...props }) => (
 	<div {...props} className={`${styles.card} ${imageSide === 'left' ? styles.flexReverse : ''}`}>
 		<p>{children}</p>
 		{image && (
@@ -17,5 +17,3 @@ const InfoCard: React.FC<Props> = ({ image, imageSide, children, ...props }) => 
 		)}
 	</div>
 );
-
-export default InfoCard;

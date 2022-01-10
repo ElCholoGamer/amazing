@@ -63,7 +63,7 @@ for (let p = 1; p < points.length; p++) {
 	points[p][1] += points[p - 1][1];
 }
 
-const BackgroundMaze: React.FC = () => {
+export const BackgroundMaze: React.FC = () => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const progress = useRef(0);
 
@@ -124,5 +124,3 @@ const BackgroundMaze: React.FC = () => {
 
 	return <canvas className={styles.canvas} ref={canvasRef} width={1000} height={1000}></canvas>;
 };
-
-export default BackgroundMaze;

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Button from '@mui/material/Button';
 import placeholderImage from '@public/placeholder.png';
-import Layout from 'modules/layout/components/Layout';
-import InfoCard from 'common/components/InfoCard';
-import BackgroundMaze from 'common/components/BackgroundMaze';
+import { Layout } from 'modules/layout/components/Layout';
+import { InfoCard } from 'common/components/InfoCard';
+import { BackgroundMaze } from 'common/components/BackgroundMaze';
 import styles from 'styles/Home.module.css';
 
 const Home: React.FC = () => (
