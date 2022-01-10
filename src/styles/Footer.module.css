@@ -1,7 +1,6 @@
 .container {
 	width: 100%;
 	text-align: center;
-	background-color: var(--bg-secondary);
-	padding: 30px;
+	padding: 2rem;
 	font-size: 0.9rem;
 }
