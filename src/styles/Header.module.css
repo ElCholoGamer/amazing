@@ -34,7 +34,11 @@
 }
 
 .navigation li:hover {
-	background-color: #122c475d;
+	background-color: rgba(18, 44, 71, 0.3);
+}
+
+.navigation li:active {
+	background-color: rgba(18, 44, 71, 0.8);
 }
 
 .rightLink {
