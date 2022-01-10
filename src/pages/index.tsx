@@ -4,7 +4,7 @@ import placeholderImage from '@public/placeholder.png';
 import { Layout } from 'modules/layout/components/Layout';
 import { InfoCard } from 'common/components/InfoCard';
 import { BackgroundMaze } from 'modules/background-maze/components/BackgroundMaze';
-import styles from 'styles/Home.module.css';
+import styles from 'styles/Home.module.scss';
 
 const Home: React.FC = () => (
 	<Layout>

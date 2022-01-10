@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import styles from 'styles/BackgroundMaze.module.css';
+import styles from 'styles/BackgroundMaze.module.scss';
 import { useMazeAnimation } from '../hooks/use-maze-animation';
 
 export const BackgroundMaze: React.FC = () => {

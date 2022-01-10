@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Button from '@mui/material/Button';
-import styles from 'styles/Header.module.css';
+import styles from 'styles/Header.module.scss';
 
 export const Header: React.FC = () => (
 	<header className={styles.container} role="banner">

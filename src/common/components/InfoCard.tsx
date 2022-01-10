@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ComponentProps } from 'react';
-import styles from 'styles/InfoCard.module.css';
+import styles from 'styles/InfoCard.module.scss';
 
 interface Props extends ComponentProps<'div'> {
 	image?: StaticImageData;
