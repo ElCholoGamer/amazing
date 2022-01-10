@@ -1,6 +1,6 @@
 import { createApiHandler } from 'modules/api/create-api-handler';
 import { db } from 'modules/database/middleware/db';
-import { getLatestResults } from 'modules/database/results';
+import { getLatestResults } from 'modules/database/result';
 
 const handler = createApiHandler();
 

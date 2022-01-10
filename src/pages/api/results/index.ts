@@ -3,9 +3,9 @@ import { UnprocessableEntityError } from 'modules/api/errors/unprocessable-entit
 import { fileUpload } from 'common/middleware/file-upload';
 import { transformBody } from 'common/middleware/transform-body';
 import { createApiHandler } from 'modules/api/create-api-handler';
-import { createResult } from 'modules/database/results';
+import { createResult } from 'modules/database/result';
 import { db } from 'modules/database/middleware/db';
-import { getAllResults } from 'modules/database/results';
+import { getAllResults } from 'modules/database/result';
 import { solveMaze } from 'modules/solver/solve';
 import { SolveOptions } from 'modules/solver/types/solve-options';
 import { validateFile } from 'modules/validator/middleware/validate-file';
