@@ -1,0 +1,13 @@
+$primary-color: white;
+$secondary-color: rgb(25, 118, 210);
+$important-color: rgb(251, 253, 117);
+$bg-color: rgb(10, 25, 41);
+$bg-color-secondary: rgb(18, 44, 71);
+
+:export {
+	primaryColor: $primary-color;
+	secondaryColor: $secondary-color;
+	importantColor: $important-color;
+	bgColor: $bg-color;
+	bgColorSecondary: $bg-color-secondary;
+}

@@ -1,6 +1,8 @@
+@import './variables.module.scss';
+
 .card {
 	margin: 80px 20px;
-	background-color: var(--bg-secondary);
+	background-color: $bg-color-secondary;
 	padding: 30px;
 	border-radius: 10px;
 

@@ -1,10 +1,4 @@
-:root {
-	--bg: rgb(10, 25, 41);
-	--bg-secondary: rgb(18, 44, 71);
-	--primary: white;
-	--secondary: rgb(25, 118, 210);
-	--important: rgb(251, 253, 117);
-}
+@import './variables.module.scss';
 
 * {
 	box-sizing: border-box;
@@ -25,8 +19,8 @@ body,
 }
 
 body {
-	color: var(--primary);
-	background: var(--bg);
+	color: $primary-color;
+	background: $bg-color;
 }
 
 #__next {
@@ -64,5 +58,5 @@ body {
 }
 
 .important {
-	color: var(--important);
+	color: $important-color;
 }
