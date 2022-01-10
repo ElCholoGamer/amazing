@@ -28,3 +28,18 @@ export const uploadThumbnail = (image: Buffer, options?: UploadApiOptions) =>
 		},
 		...options,
 	});
+
+export async function getImageUrl(imageId: string, secureOnly = false): Promise<string | null> {
+	try {
+		const { secure_url, url } = await cloudinary.api.resource(imageId);
+		if (!secure_url && secureOnly) return null;
+
+		return secure_url || url;
+	} catch (err: any) {
+		if (err.error?.http_code === 404) {
+			return null;
+		}
+
+		throw err;
+	}
+}

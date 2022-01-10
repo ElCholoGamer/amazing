@@ -1,12 +1,17 @@
 import { createApiHandler } from 'modules/api/create-api-handler';
-import { cloudinaryRedirect } from 'modules/api/utils/cloudinary-redirect';
+import { NotFoundError } from 'modules/api/errors/not-found';
 import { StorageFolder } from 'modules/database/constants';
+import { getImageUrl } from 'modules/database/image';
 
 const handler = createApiHandler();
 
 handler.get(async (req, res) => {
 	const id = req.queryString('id');
-	await cloudinaryRedirect(res, StorageFolder.MAZES + id);
+
+	const imageUrl = await getImageUrl(StorageFolder.MAZES + id);
+	if (!imageUrl) throw new NotFoundError('Maze not found.');
+
+	res.redirect(imageUrl);
 });
 
 export default handler;

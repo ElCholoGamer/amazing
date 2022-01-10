@@ -2,7 +2,7 @@ import { Coordinate } from 'common/types/coordinate';
 import { StorageFolder } from './constants';
 import { Result } from './models/result';
 import { IResult } from './schemas/result';
-import { uploadImage, uploadThumbnail } from './upload-image';
+import { uploadImage, uploadThumbnail } from './image';
 
 export async function createResult(steps: Coordinate[], image: Buffer): Promise<IResult> {
 	const result = new Result({ steps });
