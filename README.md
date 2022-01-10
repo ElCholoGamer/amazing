@@ -14,7 +14,7 @@ The tool for all of your maze-solving needs.
 
 ### Frontend
 
-- [ ] Page header
+- [x] Page header
 - [ ] Home page
 - [ ] About page
 - [ ] Latest results page
