@@ -11,37 +11,6 @@
 	}
 }
 
-.navigation {
-	margin: 0 1rem;
-
-	ul {
-		margin: 0;
-		list-style: none;
-		display: flex;
-	}
-
-	a {
-		padding: 0.8em;
-		margin: 0 0.5em;
-		border-radius: 5px;
-		transition: background-color ease-out 100ms;
-
-		&:hover {
-			background-color: rgba(18, 44, 71, 0.3);
-		}
-
-		&:active {
-			background-color: rgba(18, 44, 71, 0.8);
-		}
-	}
-}
-
 .rightLink {
 	margin-left: auto;
-}
-
-@media (prefers-reduced-motion) {
-	.navigation a {
-		transition: none !important;
-	}
 }
