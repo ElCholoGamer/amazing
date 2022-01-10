@@ -3,6 +3,7 @@
 	--bg-secondary: #122c47;
 	--primary: white;
 	--secondary: #1976d2;
+	--important: #fbfd75;
 }
 
 * {
@@ -55,4 +56,8 @@ body {
 
 .m-5 {
 	margin: 3rem;
+}
+
+.important {
+	color: var(--important);
 }

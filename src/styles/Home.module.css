@@ -6,23 +6,14 @@
 	padding: 30px;
 }
 
-.head {
-	color: var(--primary);
-	font-family: 'Work Sans', sans-serif;
+.main > h2 {
 	font-weight: bold;
-	font-size: 7rem;
-	margin-top: 8rem;
-	margin-bottom: 0.4rem;
+	font-size: 4rem;
 	text-align: center;
-	animation: float 2.5s ease-in-out infinite alternate;
-	text-shadow: 0 0 7px var(--primary);
-}
+	line-height: 1.25em;
 
-.subtitle {
-	margin-top: 0;
-	margin-bottom: 3rem;
-	font-size: 1.5rem;
-	text-align: center;
+	max-width: 800px;
+	margin: 0.6em 0 1em;
 }
 
 .mainButtons > * {
@@ -37,36 +28,13 @@
 
 .info > h3 {
 	font-size: 1.7rem;
+	font-weight: 600;
 	margin-bottom: 0;
 }
 
-.anim {
-	filter: drop-shadow(0 0 3px var(--secondary));
-}
-
-.anim path {
-	stroke: var(--secondary);
-	stroke-dasharray: 1;
-	stroke-dashoffset: 1;
-	animation: dash 3s linear forwards;
-}
-
-@keyframes float {
-	to {
-		transform: translateY(-10%);
-	}
-}
-
-@keyframes dash {
-	to {
-		stroke-dashoffset: 0;
-	}
-}
-
-@media only screen and (max-width: 700px) {
-	.head {
-		font-size: 6rem;
-		margin-top: 5rem;
-		margin-bottom: 1rem;
+@media screen and (max-width: 700px) {
+	.main > h2 {
+		font-size: 2rem;
+		margin: 2em 0 3em;
 	}
 }

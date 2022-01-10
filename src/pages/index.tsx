@@ -11,10 +11,10 @@ const Home: React.FC = () => (
 		<BackgroundMaze />
 
 		<main className={styles.main}>
-			<h1 className={styles.head} title="Heh, get it?">
-				Amazing
-			</h1>
-			<h2 className={styles.subtitle}>The tool for all of your maze-solving needs</h2>
+			<h2>
+				The <span className="important">tool</span> for all of your{' '}
+				<span className="important">maze-solving</span> needs
+			</h2>
 
 			<div className={styles.mainButtons}>
 				<Button variant="contained">Get started!</Button>
