@@ -4,11 +4,12 @@ class MyDocument extends Document {
 	render(): JSX.Element {
 		return (
 			<Html lang="en">
-				<Head />
-				<link
-					href="https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans:wght@800&display=swap"
-					rel="stylesheet"
-				/>
+				<Head>
+					<link
+						href="https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans:wght@800&display=swap"
+						rel="stylesheet"
+					/>
+				</Head>
 				<body>
 					<Main />
 					<NextScript />
