@@ -39,6 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/plugin-proposal-decorators", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:7.16.7"],
             ["@emotion/react", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:11.7.1"],
             ["@emotion/styled", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:11.6.0"],
+            ["@mui/icons-material", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.2.5"],
             ["@mui/material", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.2.5"],
             ["@types/express", "npm:4.17.13"],
             ["@types/multer", "npm:1.4.7"],
@@ -903,6 +904,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@mui/icons-material", [
+        ["npm:5.2.5", {
+          "packageLocation": "./.yarn/cache/@mui-icons-material-npm-5.2.5-a941bd5404-34fc7d9795.zip/node_modules/@mui/icons-material/",
+          "packageDependencies": [
+            ["@mui/icons-material", "npm:5.2.5"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.2.5", {
+          "packageLocation": "./.yarn/__virtual__/@mui-icons-material-virtual-08d245633e/0/cache/@mui-icons-material-npm-5.2.5-a941bd5404-34fc7d9795.zip/node_modules/@mui/icons-material/",
+          "packageDependencies": [
+            ["@mui/icons-material", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.2.5"],
+            ["@babel/runtime", "npm:7.16.5"],
+            ["@mui/material", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.2.5"],
+            ["@types/mui__material", null],
+            ["@types/react", "npm:17.0.37"],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@mui/material",
+            "@types/mui__material",
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@mui/material", [
         ["npm:5.2.5", {
           "packageLocation": "./.yarn/cache/@mui-material-npm-5.2.5-3878a7d11b-90a1418f13.zip/node_modules/@mui/material/",
@@ -1731,6 +1759,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/plugin-proposal-decorators", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:7.16.7"],
             ["@emotion/react", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:11.7.1"],
             ["@emotion/styled", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:11.6.0"],
+            ["@mui/icons-material", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.2.5"],
             ["@mui/material", "virtual:35901c97c164bf7a24d45a918ee81e1c68bb57afd1003cae08a8f403e46dd54f9543ceca28d6cf2f2bb145a2757648d7b8cfa9e5fb487d6c0f8b062fe6427f12#npm:5.2.5"],
             ["@types/express", "npm:4.17.13"],
             ["@types/multer", "npm:1.4.7"],
