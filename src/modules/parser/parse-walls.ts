@@ -12,7 +12,13 @@ export function parseWalls(imageData: ImageData): boolean[][] {
 			const index = (y * width + x) * 4;
 			const [r, g, b, a] = pixelData.slice(index, index + 4);
 
-			const luminosity = ((r + g + b) / 3) * (a / 255);
+			if (a < WALL_THRESHOLD) {
+				// Transparent pixel = Not a wall
+				walls[x][y] = false;
+				continue;
+			}
+
+			const luminosity = (r + g + b) / 3;
 			walls[x][y] = luminosity < WALL_THRESHOLD;
 		}
 	}
