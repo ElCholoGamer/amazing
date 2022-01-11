@@ -1,6 +1,7 @@
+import { WALL_THRESHOLD } from 'modules/parser/constants';
 import { ImageData } from 'common/types/image-data';
 
-export function parseWalls(imageData: ImageData, threshold: number): boolean[][] {
+export function parseWalls(imageData: ImageData): boolean[][] {
 	const { width, height, pixelData } = imageData;
 	const pixels: boolean[][] = [];
 
@@ -12,7 +13,7 @@ export function parseWalls(imageData: ImageData, threshold: number): boolean[][]
 			const [r, g, b, a] = pixelData.slice(index, index + 4);
 
 			const luminosity = ((r + g + b) / 3) * (a / 255);
-			pixels[x][y] = luminosity > threshold;
+			pixels[x][y] = luminosity > WALL_THRESHOLD;
 		}
 	}
 

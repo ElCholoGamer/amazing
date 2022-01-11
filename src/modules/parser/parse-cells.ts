@@ -3,7 +3,7 @@ import { Cell } from 'common/types/cell';
 import { parseWalls } from './parse-walls';
 
 export function parseCells(imageData: ImageData, rows: number, columns: number): Cell[][] {
-	const pixels = parseWalls(imageData, 120);
+	const pixels = parseWalls(imageData);
 
 	function rangeClear(x1: number, y1: number, x2: number, y2: number) {
 		if (x1 > x2) [x1, x2] = [x2, x1];
