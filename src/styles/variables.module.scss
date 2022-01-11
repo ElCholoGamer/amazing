@@ -1,13 +1,15 @@
-$primary-color: white;
-$secondary-color: rgb(25, 118, 210);
-$important-color: rgb(251, 253, 117);
-$bg-color: rgb(10, 25, 41);
-$bg-color-secondary: rgb(18, 44, 71);
+@import 'bootstrap/scss/functions';
 
-:export {
-	primaryColor: $primary-color;
-	secondaryColor: $secondary-color;
-	importantColor: $important-color;
-	bgColor: $bg-color;
-	bgColorSecondary: $bg-color-secondary;
-}
+$body-bg: rgb(10, 25, 41);
+$body-color: white;
+
+$primary: rgb(25, 118, 210);
+$secondary: rgb(18, 44, 71);
+
+@import 'bootstrap/scss/variables';
+
+$custom-colors: (
+	'important': rgb(251, 253, 117),
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);

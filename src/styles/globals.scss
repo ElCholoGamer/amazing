@@ -1,17 +1,17 @@
 @import './variables.module.scss';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/reboot';
 
 html,
 body,
 #__next {
-	padding: 0;
-	margin: 0;
-	font-family: Montserrat, sans-serif;
 	height: 100%;
 }
 
 body {
-	color: $primary-color;
-	background: $bg-color;
+	font-family: Montserrat, sans-serif;
 }
 
 #__next {
@@ -20,19 +20,16 @@ body {
 	justify-content: space-between;
 }
 
-* {
-	box-sizing: border-box;
-}
-
 a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.no-transform {
-	text-transform: none !important;
+em {
+	font-style: inherit;
+	color: map-get($theme-colors, 'important');
 }
 
-.important {
-	color: $important-color;
+.no-transform {
+	text-transform: none !important;
 }
