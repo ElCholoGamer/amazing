@@ -4,7 +4,7 @@ import { parseWalls } from 'modules/parser/parse-walls';
 import { Region } from 'sharp';
 
 export async function detectMazeRegion(image: Buffer): Promise<Region> {
-	const imageData = await bufferToImageData(image, null);
+	const imageData = await bufferToImageData(image);
 	const wallData = parseWalls(imageData);
 
 	const wallCountsV = wallData.map(col => col.reduce((count, wall) => count + +!wall, 0));
