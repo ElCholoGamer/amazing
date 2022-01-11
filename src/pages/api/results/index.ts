@@ -28,13 +28,15 @@ handler.post(
 	transformBody(SolveOptions),
 	async (req, res) => {
 		const image = req.file.buffer;
-		const steps = await solveMaze(image, req.body);
+		const options = req.body as SolveOptions;
+
+		const steps = await solveMaze(image, options);
 
 		if (steps === null) {
 			throw new UnprocessableEntityError('Unable to solve maze');
 		}
 
-		const result = await createResult(steps, image);
+		const result = await createResult(steps, image, options);
 		res.json(result);
 	}
 );

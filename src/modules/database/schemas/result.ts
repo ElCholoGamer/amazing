@@ -1,9 +1,14 @@
 import { ObjectId, Schema } from 'mongoose';
 import { CoordinateSchema, ICoordinate } from './coordinate';
+import { IRegion, RegionSchema } from './region';
 
 export interface IResult extends Document {
 	_id: ObjectId;
+	start: ICoordinate;
 	steps: ICoordinate[];
+	rows: number;
+	columns: number;
+	imageRegion: IRegion;
 	toPartial(): any;
 	toJSON(): any;
 	createdAt: Date;
@@ -11,7 +16,11 @@ export interface IResult extends Document {
 
 export const ResultSchema = new Schema(
 	{
-		steps: { type: [CoordinateSchema] },
+		imageRegion: { type: RegionSchema, required: true },
+		rows: { type: Number, required: true, min: 1 },
+		columns: { type: Number, required: true, min: 1 },
+		start: { type: CoordinateSchema, required: true },
+		steps: { type: [CoordinateSchema], required: true },
 	},
 	{
 		timestamps: { updatedAt: false },
