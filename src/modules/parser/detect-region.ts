@@ -12,8 +12,6 @@ export async function detectMazeRegion(image: Buffer): Promise<Region> {
 		walls.reduce((count, col) => count + +col[y], 0)
 	);
 
-	console.log(walls.map(col => col[0]).flat());
-
 	const center: Coordinate = {
 		x: Math.floor(walls.length / 2),
 		y: Math.floor(walls[0].length / 2),
