@@ -1,4 +1,5 @@
 import { Coordinate } from 'common/types/coordinate';
+import { isValidObjectId } from 'mongoose';
 import { StorageFolder } from './constants';
 import { uploadImage, uploadThumbnail } from './image';
 import { Result } from './models/result';
@@ -14,5 +15,12 @@ export async function createResult(steps: Coordinate[], image: Buffer): Promise<
 	await uploadThumbnail(image, { public_id: idString });
 
 	await result.save();
+	return result;
+}
+
+export async function getResult(id: string): Promise<IResult | null> {
+	if (!isValidObjectId(id)) return null;
+
+	const result = await Result.findById(id);
 	return result;
 }
