@@ -13,3 +13,9 @@ $custom-colors: (
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+:export {
+	@each $name, $color in $theme-colors {
+		#{$name}: $color;
+	}
+}
