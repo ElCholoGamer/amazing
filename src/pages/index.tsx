@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Button from '@mui/material/Button';
 import placeholderImage from '@public/placeholder.png';
 import { Layout } from 'modules/layout/components/Layout';
@@ -12,8 +11,7 @@ const Home: React.FC = () => (
 
 		<main className={styles.main}>
 			<h2>
-				The <span className="important">tool</span> for all of your{' '}
-				<span className="important">maze-solving</span> needs
+				The <em>tool</em> for all of your <em>maze-solving</em> needs
 			</h2>
 
 			<Button variant="contained">Get started!</Button>
