@@ -15,7 +15,7 @@ export const Header: React.FC = () => (
 		</Navigation>
 
 		<Link href="https://github.com/ElCholoGamer/amazing" passHref>
-			<Button className={styles.rightLink}>View on GitHub</Button>
+			<Button className={`${styles.rightLink} no-transform`}>View on GitHub</Button>
 		</Link>
 	</header>
 );
