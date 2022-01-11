@@ -1,6 +1,5 @@
 import { createTheme } from '@mui/material';
 import variables from 'styles/variables.module.scss';
-console.log('Var:', variables);
 
 export const createAppTheme = () =>
 	createTheme({
