@@ -3,15 +3,19 @@ import { Cell } from 'common/types/cell';
 import { parseWalls } from './parse-walls';
 
 export function parseCells(imageData: ImageData, rows: number, columns: number): Cell[][] {
-	const pixels = parseWalls(imageData);
+	const walls = parseWalls(imageData);
 
 	function rangeClear(x1: number, y1: number, x2: number, y2: number) {
 		if (x1 > x2) [x1, x2] = [x2, x1];
 		if (y1 > y2) [y1, y2] = [y2, y1];
 
 		for (let x = x1; x <= x2; x++) {
+			if (x < 0 || x >= walls.length) return false;
+
 			for (let y = y1; y <= y2; y++) {
-				if (!pixels[x][y]) return false;
+				if (y < 0 || y >= walls[x].length || walls[x][y]) {
+					return false;
+				}
 			}
 		}
 
@@ -31,8 +35,8 @@ export function parseCells(imageData: ImageData, rows: number, columns: number):
 		}))
 	);
 
-	const cellWidth = pixels.length / columns;
-	const cellHeight = pixels[0].length / rows;
+	const cellWidth = walls.length / columns;
+	const cellHeight = walls[0].length / rows;
 
 	// Initialize neighbors
 	for (let x = 0; x < columns; x++) {

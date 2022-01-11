@@ -5,18 +5,18 @@ import { Region } from 'sharp';
 
 export async function detectMazeRegion(image: Buffer): Promise<Region> {
 	const imageData = await bufferToImageData(image);
-	const wallData = parseWalls(imageData);
+	const walls = parseWalls(imageData);
 
-	const wallCountsV = wallData.map(col => col.reduce((count, wall) => count + +!wall, 0));
-	const wallCountsH = [...Array(wallData[0].length)].map((_, y) =>
-		wallData.reduce((count, col) => count + +!col[y], 0)
+	const wallCountsV = walls.map(col => col.reduce((count, wall) => count + +wall, 0));
+	const wallCountsH = [...Array(walls[0].length)].map((_, y) =>
+		walls.reduce((count, col) => count + +col[y], 0)
 	);
 
-	console.log(wallData.map(col => col[0]).flat());
+	console.log(walls.map(col => col[0]).flat());
 
 	const center: Coordinate = {
-		x: Math.floor(wallData.length / 2),
-		y: Math.floor(wallData[0].length / 2),
+		x: Math.floor(walls.length / 2),
+		y: Math.floor(walls[0].length / 2),
 	};
 
 	let left = 0;
@@ -30,7 +30,7 @@ export async function detectMazeRegion(image: Buffer): Promise<Region> {
 	}
 
 	let right = 0;
-	let rightX = wallData.length - 1;
+	let rightX = walls.length - 1;
 
 	for (let x = rightX; x >= center.x; x--) {
 		if (wallCountsV[x] > right) {
@@ -50,7 +50,7 @@ export async function detectMazeRegion(image: Buffer): Promise<Region> {
 	}
 
 	let bottom = 0;
-	let bottomY = wallData[0].length - 1;
+	let bottomY = walls[0].length - 1;
 
 	for (let y = bottomY; y >= center.y; y--) {
 		if (wallCountsH[y] > bottom) {
