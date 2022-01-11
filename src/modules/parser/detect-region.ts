@@ -1,6 +1,6 @@
 import { Coordinate } from 'common/types/coordinate';
 import { bufferToImageData } from 'common/utils/buffer-to-image-data';
-import { parseWalls } from 'modules/parser/parse-walls';
+import { parseWalls } from './parse-walls';
 import { Region } from 'sharp';
 
 export async function detectMazeRegion(image: Buffer): Promise<Region> {
