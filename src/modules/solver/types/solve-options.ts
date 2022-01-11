@@ -6,28 +6,9 @@ import { IsIntCoordinate } from 'modules/validator/decorators/is-int-coordinate'
 import { MinCoordinate } from 'modules/validator/decorators/min-coordinates';
 import { IsEqualOrLessThan } from 'modules/validator/decorators/is-equal-or-less-than';
 import { IsXLessThan, IsYLessThan } from 'modules/validator/decorators/is-less-than';
+import { RegionDto } from 'common/types/region-dto';
 
-export class SolveOptions {
-	@ParseNumber()
-	@Min(0)
-	@IsInt()
-	left!: number;
-
-	@ParseNumber()
-	@Min(0)
-	@IsInt()
-	top!: number;
-
-	@ParseNumber()
-	@Min(1)
-	@IsInt()
-	width!: number;
-
-	@ParseNumber()
-	@Min(1)
-	@IsInt()
-	height!: number;
-
+export class SolveOptions extends RegionDto {
 	@ParseNumber()
 	@IsEqualOrLessThan('height')
 	@Min(1)
