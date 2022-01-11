@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Footer } from 'modules/layout/components/Footer';
 import { OpenGraph, Props as OpenGraphProps } from './OpenGraph';
 import { Header } from './Header';
+import styles from 'styles/Layout.module.scss';
 
 export interface Props {
 	title?: string;
@@ -35,7 +36,7 @@ export const Layout: React.FC<Props> = ({
 			</Head>
 			<OpenGraph {...og} />
 
-			<div>
+			<div className={styles.content}>
 				<Header />
 				{children}
 			</div>
