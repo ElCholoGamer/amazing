@@ -5,8 +5,8 @@ export const CELL_SIZE = 50;
 
 export const colors = {
 	path: '#0e2238',
-	cursor: variables.importantColor,
-	spark: variables.importantColor,
+	cursor: variables.important,
+	spark: variables.important,
 };
 
 export const moves: Coordinate[] = [
