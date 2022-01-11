@@ -9,7 +9,7 @@ handler.get(async (req, res) => {
 	const id = req.queryString('id');
 
 	const imageUrl = await getImageUrl(StorageFolder.THUMBNAILS + id);
-	if (!imageUrl) throw new NotFoundError('Maze not found.');
+	if (!imageUrl) throw new NotFoundError('Thumbnail not found.');
 
 	res.redirect(imageUrl);
 });
