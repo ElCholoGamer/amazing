@@ -1,5 +1,5 @@
 import { BadRequestError } from 'modules/api/errors/bad-request';
-import { NextFunction, RequestHandler, Response } from 'express';
+import { RequestHandler } from 'express';
 import multer, { MulterError } from 'multer';
 
 const upload = multer();
