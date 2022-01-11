@@ -9,6 +9,7 @@ import { solveMaze } from 'modules/solver/solve';
 import { SolveOptions } from 'modules/solver/types/solve-options';
 import { validateFile } from 'modules/validator/middleware/validate-file';
 import { Result } from 'modules/database/models/result';
+import { IMAGE_MIME_TYPES, MAX_IMAGE_SIZE } from 'modules/api/constants';
 
 const handler = createApiHandler<NextApiFileRequest>();
 
@@ -22,8 +23,8 @@ handler.get(async (req, res) => {
 handler.post(
 	fileUpload('image'),
 	validateFile({
-		maxSize: 10e6, // 10 MB
-		mimeTypes: ['png', 'jpeg', 'jpg', 'webp'].map(ext => `image/${ext}`),
+		maxSize: MAX_IMAGE_SIZE,
+		mimeTypes: IMAGE_MIME_TYPES,
 	}),
 	transformBody(SolveOptions),
 	async (req, res) => {
