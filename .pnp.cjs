@@ -2621,10 +2621,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["color", [
-        ["npm:4.1.0", {
-          "packageLocation": "./.yarn/cache/color-npm-4.1.0-7a443e52e1-9f2ca574f8.zip/node_modules/color/",
+        ["npm:4.2.0", {
+          "packageLocation": "./.yarn/cache/color-npm-4.2.0-ea42aa584e-a5e7d8e8b4.zip/node_modules/color/",
           "packageDependencies": [
-            ["color", "npm:4.1.0"],
+            ["color", "npm:4.2.0"],
             ["color-convert", "npm:2.0.1"],
             ["color-string", "npm:1.9.0"]
           ],
@@ -7007,7 +7007,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/sharp-npm-0.29.3-70033a2ec2/node_modules/sharp/",
           "packageDependencies": [
             ["sharp", "npm:0.29.3"],
-            ["color", "npm:4.1.0"],
+            ["color", "npm:4.2.0"],
             ["detect-libc", "npm:1.0.3"],
             ["node-addon-api", "npm:4.2.0"],
             ["node-gyp", "npm:8.4.1"],

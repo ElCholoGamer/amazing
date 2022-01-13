@@ -2133,12 +2133,12 @@ __metadata:
   linkType: hard
 
 "color@npm:^4.0.1":
-  version: 4.1.0
-  resolution: "color@npm:4.1.0"
+  version: 4.2.0
+  resolution: "color@npm:4.2.0"
   dependencies:
     color-convert: ^2.0.1
     color-string: ^1.9.0
-  checksum: 9f2ca574f8453983ab549282962ccdb094d8b5d29de2d162f2bca81c0c82429d1dfac49d8dabf2c0c0369bb7ceae16ceabc9f523f9eaedcba38a464e72091458
+  checksum: a5e7d8e8b4cdc3a005da8f0d9a41c63f74c46ab0865d834e950891a5c171141e8e88cbb958a501bd6d80ec57448fee4f630d9910f9533524ea9324e4bc9a3c35
   languageName: node
   linkType: hard
 
