@@ -1,11 +1,7 @@
 import { Schema, Document } from 'mongoose';
+import { Region } from 'sharp';
 
-export interface IRegion extends Document {
-	left: number;
-	top: number;
-	width: number;
-	height: number;
-}
+export interface IRegion extends Region, Document {}
 
 export const RegionSchema = new Schema(
 	{
