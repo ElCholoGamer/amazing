@@ -1,3 +1,4 @@
+import { PartialResult } from 'common/types/partial-result';
 import { ObjectId, Schema } from 'mongoose';
 import { CoordinateSchema, ICoordinate } from './coordinate';
 import { IRegion, RegionSchema } from './region';
@@ -9,7 +10,7 @@ export interface IResult extends Document {
 	rows: number;
 	columns: number;
 	imageRegion: IRegion;
-	toPartial(): any;
+	toPartial(): PartialResult;
 	toJSON(): any;
 	createdAt: Date;
 }
